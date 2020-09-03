@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block head %}<title>Home page</title>{% endblock %}
+{% block body %}
+
+
+<div >
+<div class="container">
+   
+<div class="row d-flex justify-content-center">
+    <div class="col-12 col-md-8 mb-4">
+    <h4>Download the file containing roll numbers from here else copy the roll numbers from below</h4>
+            
+             <a href="{{ url_for( 'download') }}"> <button class="btn btn-lg btn-outline-success">Download</button></a>
+    </div>
+    <div class="col-12 col-md-8">
+<div class="card bd-highlight" id=box style="margin-bottom: 2rem, width:50%;">
+   
+
+    <div class="card-body" style="text-align: center;">
+
+
+        <table class="table table-hover"  style="">
+            <thead>
+                <th scope="col" class="h4"> Roll numbers</th>
+            </thead>
+        <tbody>
+        {% for roll in rolls%} 
+            <tr>
+                <td scope="row" class="h4">{{ roll }}</td>
+            </tr>
+    {% endfor %} 
+        </tbody>
+        </table>  
+</div>
+</div>
+</div>
+    </div>
+</div>
+
+
+{% endblock %}
