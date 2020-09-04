@@ -38,7 +38,6 @@ def home():
 @app.route("/download", methods=["GET","POST"])
 def download():
     fh=open("roll_list.txt","w")
-    fh.write("Strength of class "+str(len(rolls))+"\n")
     for roll in rolls:
         print(roll)
         fh.write((roll+"\n"))
