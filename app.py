@@ -31,13 +31,14 @@ def home():
             fh.write(roll+"\n")
     
         
-        return render_template("rolls.html", rolls=rolls)
+        return render_template("rolls.html", rolls=rolls, length=len(rolls))
     else: 
        return  render_template("index.html",form = form)
 # for home page
 @app.route("/download", methods=["GET","POST"])
 def download():
     fh=open("roll_list.txt","w")
+    fh.write("Strength of class "+str(len(rolls))+"\n")
     for roll in rolls:
         print(roll)
         fh.write((roll+"\n"))

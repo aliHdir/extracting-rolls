@@ -18,19 +18,28 @@
 
     <div class="card-body" style="text-align: center;">
 
-
+        {% if length>0 %}
         <table class="table table-hover"  style="">
+            <thead>
+                <th scope="col" class="h4"> Strength of class: {{ length }}</th>
+            </thead>
             <thead>
                 <th scope="col" class="h4"> Roll numbers</th>
             </thead>
         <tbody>
+
         {% for roll in rolls%} 
             <tr>
                 <td scope="row" class="h4">{{ roll }}</td>
             </tr>
     {% endfor %} 
         </tbody>
-        </table>  
+        </table> 
+        {%else %}
+            <div class="h3 error">
+                Chat does not contain any roll numbers of format 1604-xx-xxx-xxx
+            </div>
+        {% endif %} 
 </div>
 </div>
 </div>
