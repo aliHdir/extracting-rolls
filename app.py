@@ -44,6 +44,7 @@ def download():
         fh.write((roll+"\n"))
     
     fh.flush()
+    fh.close()
     return send_file("roll_list.txt", as_attachment=True)
 
 
